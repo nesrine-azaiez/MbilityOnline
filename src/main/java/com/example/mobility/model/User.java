@@ -1,12 +1,17 @@
 package com.example.mobility.model;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @NoArgsConstructor
+@Getter
+@Setter
+
 
 public class User implements Serializable {
     private static final long serialVersionUID = 65981149772133526L;
