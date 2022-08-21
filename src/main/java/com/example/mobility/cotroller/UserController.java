@@ -1,3 +1,4 @@
+
 package com.example.mobility.cotroller;
 
 import com.example.mobility.model.User;
@@ -32,3 +33,5 @@ public class UserController {
     }
 
 }
+
+
