@@ -28,4 +28,21 @@ public class UserServiceImpl implements IUserService {
         });
         return users;
     }
+
+    @Override
+    public User retrieveUser(Long id) {
+        User u = userRepository.findById(id).orElse(null);
+        return u;
+    }
+
+    @Override
+    public void updateUser(User u, Long idU) {
+        User user=userRepository.findById(idU).orElse(null);
+        userRepository.save(user);
+    }
+
+    @Override
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
+    }
 }

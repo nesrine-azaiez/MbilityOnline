@@ -1,8 +1,6 @@
 package com.example.mobility.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,6 +9,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+@ToString
 
 
 public class User implements Serializable {
