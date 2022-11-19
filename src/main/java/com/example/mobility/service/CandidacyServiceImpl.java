@@ -61,5 +61,24 @@ public class CandidacyServiceImpl implements ICandidacyService{
         }
         return (List<Candidacy>) repoCandidacy.findAll();
     }
+
+    @Override
+    public List<Candidacy> SearchCandidacyMultiple(String key) {
+
+        if (key.equals(""))
+        {
+            return (List<Candidacy>) repoCandidacy.findAll();
+        }else
+        {
+            return repoCandidacy.searchmultilplcandidacy(key);
+        }
+
+    }
+    public Candidacy getCandidacyById(int idCandidacy) {
+        return repoCandidacy.findById(idCandidacy).get();
+    }
+
+
+
 }
 

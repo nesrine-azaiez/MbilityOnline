@@ -12,10 +12,11 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/user")
 public class UserController {
 
 	@Autowired
@@ -61,6 +62,24 @@ public class UserController {
 		userService.addUser(user);
 
 	}
+
+	@ApiOperation(value = "Retrieve User by ID ")
+	@GetMapping("/retrieve-User-by-ID/{idU}")
+	@ResponseBody
+	public User RetrieveUser(@PathVariable("idU") Long idU)
+	{
+		return userService.retrieveUser(idU);
+	}
+
+
+	@GetMapping("/GetUser/{id}")
+	@ResponseBody
+	@ApiOperation(value = "Get User ")
+	public Optional<User> GetUser(@PathVariable ("id") Long idUser) {
+		return userService.findUserById(idUser);
+	}
+
+
 	///////////////////////////////////////
 
 	@GetMapping("/user/me")

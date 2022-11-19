@@ -60,4 +60,19 @@ public class CandidacyController {
         return  listCandidacy;
     }
 
+    @ApiOperation(value = " Search Candidacy Multiple  ")
+    @GetMapping("/SearchMultiple/{keyword}")
+    @ResponseBody
+    public List<Candidacy> SearchCandidacyMultiple(@PathVariable("keyword")  String key){
+        return  iServices.SearchCandidacyMultiple(key);
+
+    }
+    @ApiOperation(value = "get candidacy by id")
+    @GetMapping("/getCandidacyById/{idCandidacy}")
+    public Candidacy getCandidacyById(@PathVariable(name = "idCandidacy") Integer idCandidacy)
+    {
+        return iServices.getCandidacyById(idCandidacy);
+    }
+
+
 }

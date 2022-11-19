@@ -16,8 +16,11 @@ public interface ICandidacyService {
     List<Candidacy> GetCandidacy();
     void addUser (User user);
 
-    List<Candidacy> listAllCandidacy(String keyword);
+    List<Candidacy> SearchCandidacyMultiple(String key);
 
+
+    List<Candidacy> listAllCandidacy(String keyword);
+    Candidacy getCandidacyById(int id);
 
 
 }

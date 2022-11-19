@@ -57,4 +57,7 @@ public class User implements Serializable {
 	@ManyToMany
 	@JoinTable(name = "user_role", joinColumns = { @JoinColumn(name = "USER_ID") }, inverseJoinColumns = { @JoinColumn(name = "ROLE_ID") })
 	private Set<Role> roles;
+
+//	@JsonIgnore
+//	private  Set<Candidacy> candidacy;
 }
